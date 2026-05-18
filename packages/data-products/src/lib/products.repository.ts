@@ -1,4 +1,4 @@
-import { Product } from '@tusky/api-types';
+import { Product } from '@polydemo/api-types';
 
 const products: Product[] = [
   {
@@ -86,13 +86,6 @@ export class ProductsRepository {
 
   findById(id: number): Product | undefined {
     return products.find((p) => p.id === id);
-  }
-
-  updateRating(productId: number, rating: number): void {
-    const product = this.findById(productId);
-    if (product) {
-      product.rating = rating;
-    }
   }
 }
 

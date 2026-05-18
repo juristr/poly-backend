@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 import { productsRoutes } from './products.routes';
 
-vi.mock('@tusky/service-products', () => ({
+vi.mock('@polydemo/service-products', () => ({
   productsService: {
     getAll: vi.fn().mockReturnValue([
       {

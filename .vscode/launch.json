@@ -4,9 +4,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug @tusky-backend/tusky-backend with Nx",
+      "name": "Debug PolyShopping API",
       "runtimeExecutable": "pnpm exec",
-      "runtimeArgs": ["nx", "serve", "@tusky-backend/tusky-backend"],
+      "runtimeArgs": ["tsx", "--conditions", "source", "apps/api/src/main.ts"],
       "env": {
         "NODE_OPTIONS": "--inspect=9229"
       },

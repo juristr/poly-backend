@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ProductsService } from './products.service';
-import { ProductsRepository } from '@tusky/data-products';
-import { Product } from '@tusky/api-types';
+import { ProductsRepository } from '@polydemo/data-products';
+import { Product } from '@polydemo/api-types';
 
 const mockProducts: Product[] = [
   {

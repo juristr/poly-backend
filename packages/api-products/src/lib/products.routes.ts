@@ -1,5 +1,5 @@
 import { FastifyInstance, RouteShorthandOptions } from 'fastify';
-import { productsService } from '@tusky/service-products';
+import { productsService } from '@polydemo/service-products';
 
 export async function productsRoutes(fastify: FastifyInstance) {
   const getAllProductsOpts: RouteShorthandOptions = {

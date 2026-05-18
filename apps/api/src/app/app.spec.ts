@@ -3,7 +3,7 @@ import Fastify, { FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
 import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
-import { productsRoutes } from '@tusky/api-products';
+import { productsRoutes } from '@polydemo/api-products';
 
 describe('API Integration Tests', () => {
   let server: FastifyInstance;
@@ -14,7 +14,7 @@ describe('API Integration Tests', () => {
     await server.register(cors, { origin: true });
     await server.register(swagger, {
       openapi: {
-        info: { title: 'Tusky Shop API', version: '1.0.0' },
+        info: { title: 'PolyShopping API', version: '1.0.0' },
       },
     });
     await server.register(swaggerUi, { routePrefix: '/docs' });
@@ -71,7 +71,7 @@ describe('API Integration Tests', () => {
       expect(response.statusCode).toBe(200);
       const body = JSON.parse(response.body);
       expect(body.openapi).toBe('3.0.3');
-      expect(body.info.title).toBe('Tusky Shop API');
+      expect(body.info.title).toBe('PolyShopping API');
     });
   });
 
