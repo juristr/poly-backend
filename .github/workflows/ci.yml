@@ -19,23 +19,17 @@ jobs:
           filter: tree:0
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          version: 10.12.1
-          run_install: false
-
       # Cache node_modules
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'pnpm'
+          cache: 'npm'
 
-      - run: pnpm install --frozen-lockfile
+      - run: npm ci
 
       - name: check formatting
-        run: pnpm exec prettier --check .
+        run: npx prettier --check .
 
-      - run: pnpm lint
-      - run: pnpm test
-      - run: pnpm build
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build

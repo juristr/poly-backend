@@ -1,22 +1,22 @@
 # PolyShopping Backend
 
-Fastify API for the PolyShopping demo. This is a plain pnpm workspace, no Nx required.
+Fastify API for the PolyShopping demo. This is a plain npm workspace, no Nx required.
 
 ## Requirements
 
 - Node.js 20+
-- pnpm 10+
+- npm 10+
 
 ## Install
 
 ```sh
-pnpm install
+npm install
 ```
 
 ## Run
 
 ```sh
-pnpm dev
+npm run dev
 ```
 
 The API listens on `http://localhost:3000` by default.
@@ -30,23 +30,23 @@ Useful endpoints:
 Override host or port if needed:
 
 ```sh
-HOST=0.0.0.0 PORT=3001 pnpm dev
+HOST=0.0.0.0 PORT=3001 npm run dev
 ```
 
 ## Build
 
 ```sh
-pnpm build
-pnpm start
+npm run build
+npm start
 ```
 
-`pnpm build` compiles all workspace packages with TypeScript project references. `pnpm start` runs the compiled API from `apps/api/dist/main.js`.
+`npm run build` compiles all workspace packages with TypeScript project references. `npm start` runs the compiled API from `apps/api/dist/main.js`.
 
 ## Test And Lint
 
 ```sh
-pnpm test
-pnpm lint
+npm test
+npm run lint
 ```
 
 ## Workspace Layout

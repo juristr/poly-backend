@@ -6,11 +6,15 @@
     "dev": "tsx --conditions source apps/api/src/main.ts",
     "build": "tsc -b",
     "start": "node apps/api/dist/main.js",
-    "test": "pnpm build && pnpm --filter './apps/*' --filter './packages/*' -r --if-present test",
+    "test": "npm run build && npm run test --workspaces --if-present",
     "lint": "eslint .",
     "clean": "find apps packages -name dist -type d -prune -exec rm -rf {} +"
   },
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@eslint/js": "^9.8.0",

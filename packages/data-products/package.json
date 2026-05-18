@@ -16,7 +16,7 @@
     }
   },
   "dependencies": {
-    "@polydemo/api-types": "workspace:*",
+    "@polydemo/api-types": "0.0.1",
     "tslib": "^2.3.0"
   },
   "scripts": {
