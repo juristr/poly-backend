@@ -1,11 +1,9 @@
 import { FastifyInstance, RouteShorthandOptions } from 'fastify';
-import { productsService } from '@polydemo/service-products';
+import { productsService } from './service.js';
 
 export async function productsRoutes(fastify: FastifyInstance) {
   const getAllProductsOpts: RouteShorthandOptions = {
     schema: {
-      tags: ['products'],
-      summary: 'Get all products',
       response: {
         200: {
           type: 'array',
@@ -32,8 +30,6 @@ export async function productsRoutes(fastify: FastifyInstance) {
 
   const getProductByIdOpts: RouteShorthandOptions = {
     schema: {
-      tags: ['products'],
-      summary: 'Get product by ID',
       params: {
         type: 'object',
         properties: {

@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
-import { productsRoutes } from './products.routes';
+import { productsRoutes } from './routes.js';
 
-vi.mock('@polydemo/service-products', () => ({
+vi.mock('./service.js', () => ({
   productsService: {
     getAll: vi.fn().mockReturnValue([
       {
