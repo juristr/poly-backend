@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { ProductsService } from './products.service';
-import { ProductsRepository } from '@polydemo/data-products';
-import { Product } from '@polydemo/api-types';
+import { ProductsService } from './service.js';
+import { ProductsRepository } from './repository.js';
+import { Product } from './types.js';
 
 const mockProducts: Product[] = [
   {

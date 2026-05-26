@@ -1,4 +1,4 @@
-import { Product } from '@polydemo/api-types';
+import { Product } from './types.js';
 
 const products: Product[] = [
   {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ProductsRepository, productsRepository } from './products.repository';
+import { ProductsRepository, productsRepository } from './repository.js';
 
 describe('ProductsRepository', () => {
   describe('findAll', () => {

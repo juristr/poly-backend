@@ -1,8 +1,5 @@
-import { Product } from '@polydemo/api-types';
-import {
-  ProductsRepository,
-  productsRepository,
-} from '@polydemo/data-products';
+import { Product } from './types.js';
+import { ProductsRepository, productsRepository } from './repository.js';
 
 export class ProductsService {
   constructor(private repo: ProductsRepository = productsRepository) {}
