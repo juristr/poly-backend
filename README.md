@@ -33,13 +33,13 @@ HOST=0.0.0.0 PORT=3001 npm run dev
 
 ## Scripts
 
-| Script          | What it does                |
-| --------------- | --------------------------- |
-| `npm run dev`   | `tsx src/main.ts`           |
-| `npm run build` | `tsc -b` → `dist/`          |
-| `npm start`     | `node dist/main.js`         |
-| `npm test`      | `vitest run` (15 tests)     |
-| `npm run lint`  | `eslint .`                  |
+| Script          | What it does            |
+| --------------- | ----------------------- |
+| `npm run dev`   | `tsx src/main.ts`       |
+| `npm run build` | `tsc -b` → `dist/`      |
+| `npm start`     | `node dist/main.js`     |
+| `npm test`      | `vitest run` (15 tests) |
+| `npm run lint`  | `eslint .`              |
 
 ## Endpoints
 
