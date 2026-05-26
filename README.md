@@ -1,60 +1,66 @@
 # PolyShopping Backend
 
-Fastify API for the PolyShopping demo. This is a plain npm workspace, no Nx required.
+Fastify API for the **PolyShopping** demo. Plain single-project repo, no monorepo, no Nx.
+
+This repo is one of the demo repos used to showcase [Polygraph](https://polygraph.dev) — coordinating changes across multiple repos.
+
+## Stack
+
+- Fastify 5 + `@fastify/cors`
+- Vitest (node env) for unit + integration tests
+- TypeScript with `tsc -b`
+- `tsx` for dev
 
 ## Requirements
 
 - Node.js 20+
 - npm 10+
 
-## Install
-
-```sh
-npm install
-```
-
 ## Run
 
 ```sh
+npm install
 npm run dev
 ```
 
 The API listens on `http://localhost:3000` by default.
 
-Useful endpoints:
-
-- `GET /api/products`
-- `GET /api/products/:id`
-- `GET /docs`
-
-Override host or port if needed:
+Override host or port:
 
 ```sh
 HOST=0.0.0.0 PORT=3001 npm run dev
 ```
 
-## Build
+## Scripts
 
-```sh
-npm run build
-npm start
+| Script          | What it does                |
+| --------------- | --------------------------- |
+| `npm run dev`   | `tsx src/main.ts`           |
+| `npm run build` | `tsc -b` → `dist/`          |
+| `npm start`     | `node dist/main.js`         |
+| `npm test`      | `vitest run` (15 tests)     |
+| `npm run lint`  | `eslint .`                  |
+
+## Endpoints
+
+- `GET /api/products` → `Product[]`
+- `GET /api/products/:id` → `Product` or `404`
+
+## Project layout
+
+```
+src/
+  main.ts                       Fastify boot + listen
+  app/app.ts                    plugin: CORS + route registration
+  app/app.spec.ts               integration test against the app plugin
+  products/
+    routes.ts                   GET /api/products and /:id
+    service.ts                  ProductsService
+    repository.ts               in-memory store + ProductsRepository
+    types.ts                    Product interface
+    *.spec.ts                   colocated unit tests
 ```
 
-`npm run build` compiles all workspace packages with TypeScript project references. `npm start` runs the compiled API from `apps/api/dist/main.js`.
+## Frontend contract
 
-## Test And Lint
-
-```sh
-npm test
-npm run lint
-```
-
-## Workspace Layout
-
-```text
-apps/api                  Fastify app
-packages/api-products     HTTP routes for products
-packages/service-products Product business logic
-packages/data-products    In-memory product data
-packages/api-types        Shared API types
-```
+The `Product` shape lives in `src/products/types.ts`. Keep it in sync with [`poly-frontend`](https://github.com/juristr/poly-frontend) (`src/lib/data-access-products.ts`).
